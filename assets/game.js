@@ -14,6 +14,7 @@ document.onkeyup = function(event) {
 
     if (userChoice === "r" || userChoice === "p" || userChoice === "s") {
         // console.log("Valid Choice!")
+
         if (userChoice === "r" && computerChoice === "s" ) {
             wins++;
         } else if (userChoice === "p" && computerChoice === "r" ) {
@@ -27,8 +28,16 @@ document.onkeyup = function(event) {
         } else if (userChoice === "s" && computerChoice === "r") {
             losses++;
         } else {
-            tie++;
+            ties++;
         };
+
+        
+        document.getElementById("userChoice-text").textContent = "User: " + userChoice;
+        document.getElementById("computerChoice-text").textContent = "Computer: " + computerChoice;
+        document.getElementById("wins-text").textContent = "Wins: " + wins;
+        document.getElementById("losses-text").textContent = "Losses: " + losses;
+        document.getElementById("ties-text").textContent = "Ties: " + ties;
+
     } else {
         alert("Please press 'r', 'p', or 's' to play the game.")
     }
